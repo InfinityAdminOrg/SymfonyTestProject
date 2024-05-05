@@ -26,6 +26,9 @@
             "migrations/.gitignore"
         ]
     },
+    "infinity-admin/symfony-admin-bundle": {
+        "version": "dev-main"
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {
