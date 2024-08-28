@@ -9,3 +9,4 @@ infinity:
         path: '@InfinityBundle/src/Controller'
         namespace: Infinity\Controller
     type: attribute
+    prefix: /admin
