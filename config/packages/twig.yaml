@@ -1,5 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
+    paths:
+        '%kernel.project_dir%/vendor/infinity-admin/symfony-admin-bundle/templates': InfinityBundle # for the time being it's set i
 
 when@test:
     twig:

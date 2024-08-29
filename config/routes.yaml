@@ -6,7 +6,7 @@ controllers:
 
 infinity:
     resource:
-        path: '@InfinityBundle/Controller'
-        namespace: InfinityBundle\Controller
+        path: '@InfinityBundle/src/Controller'
+        namespace: Infinity\Controller
     type: attribute
     prefix: /admin
