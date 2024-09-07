@@ -19,8 +19,11 @@ security:
             provider: users_in_memory
 
             form_login:
-                login_path: infinity.clear.login
-                check_path: infinity.clear.login
+                login_path: infinity.login
+                check_path: infinity.login
+
+            logout:
+                path: infinity.logout
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
