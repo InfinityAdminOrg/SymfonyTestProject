@@ -1,0 +1,37 @@
+services:
+  infinity_admin_test_project_php:
+    container_name: infinity_admin_test_project_php
+    build:
+      context: ./php
+    environment:
+      - DATABASE_URL=mysql://infinity:infinity@infinity_admin_mariadb:3306/infinity?serverVersion=mariadb-11.5.2&charset=utf8
+    volumes:
+      - ../:/var/www
+      - ./php/ini/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./php/ini/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
+      - ./php/conf/php-fpm-custom.conf:/usr/local/etc/php-fpm.d/zz-php-fpm-custom.conf:ro
+
+  infinity_admin_nginx:
+    container_name: infinity_admin_nginx
+    image: nginx:alpine
+    volumes:
+      - ../:/var/www
+      - ./nginx/dev.conf:/etc/nginx/nginx.conf
+      - ./nginx/sites:/etc/nginx/sites-available
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    ports:
+      - "80:80"
+
+  infinity_admin_mariadb:
+    container_name: infinity_admin_mariadb
+    image: mariadb:11
+    environment:
+      - MARIADB_PASSWORD=infinity
+      - MARIADB_DATABASE=infinity
+      - MARIADB_USER=infinity
+      - MARIADB_ROOT_PASSWORD=infinity
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    ports:
+      - "3306:3306"

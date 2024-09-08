@@ -6,6 +6,7 @@ use App\Repository\Product\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
+#[ORM\Table('product__product')]
 class Product
 {
     #[ORM\Id]

@@ -18,3 +18,6 @@
 ###< symfony/asset-mapper ###
 
 .idea
+
+/docker/mariadb
+/docker/logs
